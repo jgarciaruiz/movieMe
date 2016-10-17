@@ -1,0 +1,408 @@
+/* 00. Basic Styling
+-------------------------*/
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
+}
+
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff");
+}
+
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+}
+
+/** Bold */ 
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {font: 14px San Francisco, Helvetica, Arial, san-serif;}
+
+/* We like off-black for text. */
+body, select, input, textarea {color: #333;}
+
+a {color: #03f;}
+a:hover {color: #69f;}
+
+/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: #000; color: #fff; text-shadow: none;}
+::selection {background: #000; color: #fff; text-shadow: none;} 
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #fcd700;} 
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder { color:#a9a9a9; }
+textarea:-moz-placeholder { color:#a9a9a9; }
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+/*==========================
+  NAV: top fixed nav v2
+==========================*/
+#top_header {
+  padding: 1.5em 0;
+  border-bottom: 4px solid #73e298;
+}
+#top_header .logo {
+  /* float: left; */
+  text-transform: uppercase;
+  font-size: 1.15em;
+  font-weight: 300;
+  text-align: center;
+}
+#top_header .logo span {
+  font-weight: bolder;
+  color: #73e298;
+}
+#top_header #main_nav {
+  float: right;
+  font-size: .9em;
+}
+#top_header #main_nav a {
+  color: #8b8b9f;
+  text-decoration: none;
+  margin-left: 1em;
+}
+h1{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.menu {
+  display: none;
+}
+
+/*==========================
+  NAV: bottom nav
+==========================*/
+
+#primary--nav a {
+  display: block;
+  padding: 1rem;
+  color: #000;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  text-align: center;
+  text-decoration: none;
+}
+#primary--nav a:hover {
+  background-color: #fdfdfd;
+}
+
+#primary--nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+#primary--nav ul li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0;
+      -ms-flex: 1 1 0;
+          flex: 1 1 0;
+}
+#primary--nav ul li:last-of-type a {
+  border-right: none;
+}
+
+.navbar{
+  background-color: #fff;
+  min-height: 49px;
+  border-top: 1px solid #b1b1b1;
+  margin-bottom: 0px;
+}
+.icon--nav {
+    display: block;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.text--label{
+  font-size: 12px;
+}
+#icon-home{
+  background-image: url(../svg/compass.svg);
+}
+#icon-movies{
+  background-image: url(../svg/film-strip.svg);
+}
+#icon-series{
+  background-image: url(../svg/computer.svg);
+}
+#icon-settings{
+  background-image: url(../svg/cogwheel.svg);
+}
+
+
+
+
+
+
+
+/*==========================
+  home: searchbox
+==========================*/
+
+.form-wrapper {
+  display: flex;
+  padding: 0;
+  padding-bottom: 3px;
+  position: relative;
+}
+
+.form-wrapper:before {
+  position: absolute;
+  content: url(../svg/loupe.svg);
+  width: 24px;
+  z-index: 9;
+  top: 8px;
+  left: 6px;
+}
+
+.form-wrapper input {
+  border: 0;
+  border-radius: 0;
+  height: 40px;
+  /* width: calc(100% - -2px); */
+  /* margin-left:1px; */
+  box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  position: relative;
+  padding-left: 36px;
+}
+
+.form-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}    
+
+.form-wrapper button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 110px;
+  color: #fff;
+  text-transform: uppercase;
+  background: #000000;
+  /*
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  */
+  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  box-shadow: -8px 10px 0px -7px #000, 8px 10px 0px -7px #000;  
+}   
+
+.form-wrapper button:before {
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #000000 transparent;
+    top: 15px;
+    left: -6px;
+}
+
+
+.form-wrapper button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+} 
+
+
+
+/*==========================
+  home: movie posters
+==========================*/
+
+.poster.img {
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.poster.img figure {
+  text-align: center;
+  position: relative;
+  
+  /*give images same height keeping ratio */
+  /* padding: keep ratio: 50% -> ratio 1:2 (height / width * 100) */
+  overflow: hidden;
+  padding-bottom: 150%;
+}
+.poster.img figure figurecaption{
+  top: 0;
+  left: 0;
+  position: absolute;
+  text-indent: -9999px;
+}
+
+.poster.img img {
+  max-width: 100%;
+
+  /*give images same height */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+  
+}
+
+img.img-responsive {
+    width: 100%;
+}
+
+#hero {
+    height: 390px;
+    overflow: hidden;
+    position: relative;
+}
+#searched-title{
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.42);
+}
+
+
+/* flip */
+/*
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin: -150px;
+  float: left;
+  perspective: 500px;
+}
+
+.flipwr {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .flipwr {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.flipwr .front,
+.flipwr .back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 300px;
+  color: #03446A;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.flipwr .back {
+  background: #03446A;
+  color: white;
+  transform: rotateY( 180deg );
+}
+*/
+
+@media only screen and (max-width: 960px) { 
+  #hero{
+    height: auto;
+  }
+}
